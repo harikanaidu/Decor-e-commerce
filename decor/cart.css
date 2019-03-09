@@ -1,0 +1,172 @@
+
+/* Global settings */
+$color-border: #eee;
+
+
+
+/* Global "table" column settings */
+.product-image { float: left; width: 20%; }
+.product-price { float: left; width: 12%; }
+.product-removal { float: left; width: 9%; }
+
+
+
+
+/* Apply clearfix in a few places */
+.shopping-cart, .column-labels, .product, .totals-item {
+    @extend .group;
+}
+
+
+/* Apply dollar signs */
+.product .product-price:before, .product .product-line-price:before, .totals-value:before {
+    content: '$';
+}
+
+
+/* Body/Header stuff */
+header{
+    
+    background:#99ccff;
+    width: 100%;
+    padding: 20px 0px 20px 0px;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-family: serif;
+    font-style: italic;
+}
+
+label {
+    color: $color-label;
+}
+
+.shopping-cart {
+    margin-top: 3%;
+}
+
+
+
+
+/* Product entries */
+.product {
+    margin-top:5%
+    margin-bottom: 5%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $color-border;
+    
+    .product-image {
+        text-align: center;
+        img {
+            width: 100px;
+        }
+    }
+    
+    
+    .remove-product {
+        border: 0;
+        padding: 4px 8px;
+        background-color: #c66;
+        color: #fff;
+        font-family: $font-bold;
+        font-size: 12px;
+        border-radius: 3px;
+    }
+    
+    .remove-product:hover {
+        background-color: #a44;
+    }
+}
+
+
+/* Totals section */
+.totals {
+    .totals-item {
+        float: right;
+        clear: both;
+        width: 100%;
+        margin-top:20%;
+        
+        label {
+            float: left;
+            clear: both;
+            width: 79%;
+            text-align: right;
+        }
+        
+        .totals-value {
+            float: right;
+            width: 21%;
+            text-align: right;
+        }
+    }
+    
+    .totals-item-total {
+        font-family: $font-bold;
+    }
+}
+
+.checkout {
+    float: right;
+    border: 0;
+    margin-top: 15%;
+    padding: 6px 25px;
+    background-color: #6b6;
+    color: #fff;
+    font-size: 25px;
+    border-radius: 3px;
+}
+
+.checkout:hover {
+    background-color: #494;
+}
+
+@media screen and (max-width: 650px) {
+    
+    .shopping-cart {
+        margin: 0;
+        padding-top: 20px;
+        border-top: 1px solid $color-border;
+    }
+
+    
+    .product-image {
+        float: right;
+        width: auto;
+        img {
+            margin: 0 0 10px 10px;
+        }
+    }
+    
+    
+    .product-price {
+        clear: both;
+        width: 70px;
+    }
+    
+    .product-removal {
+        width: auto;
+    }
+    
+    
+}
+
+
+@media screen and (max-width: 350px) {
+    
+    .product-removal {
+        float: right;
+    }
+    
+    .totals {
+        .totals-item {
+            label {
+                width: 60%;
+            }
+            
+            .totals-value {
+                width: 40%;
+            }
+        }
+    }
+}

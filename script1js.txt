@@ -1,0 +1,11 @@
+$("document").ready(function(){
+	$('ul.parent > li').hover(function(){
+		$(this).find('ul.child').show(1400);
+	},
+	function(){
+		$(this).find('ul.child').hide(1400);
+
+	});
+
+
+});
